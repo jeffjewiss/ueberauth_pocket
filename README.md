@@ -1,6 +1,6 @@
 # Überauth Pocket
 
-> Pocket OAuth2 strategy for Überauth.
+> [Pocket](https://getpocket.com) OAuth2 strategy for Überauth.
 
 ## Installation
 
