@@ -19,7 +19,8 @@ defmodule Ueberauth.Strategy.Pocket do
       @request_token_endpoint,
       %{redirect_uri: callback_url(conn)}
     )
-    put_session(conn, :pocket_request_token, req_token)
+    conn
+    |> put_session(:pocket_request_token, req_token)
     |> auth_redirect(req_token)
   end
 
@@ -40,11 +41,11 @@ defmodule Ueberauth.Strategy.Pocket do
     handle_callback_token(conn, token)
   end
 
-  def handle_callback_token(conn, nil) do
+  defp handle_callback_token(conn, nil) do
     set_errors!(conn, [error("missing_request_token", "Can't find request token")])
   end
 
-  def handle_callback_token(conn, req_token) do
+  defp handle_callback_token(conn, req_token) do
     %{
       "access_token" => access_token,
       "username" => username
