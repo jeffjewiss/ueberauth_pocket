@@ -34,7 +34,7 @@
 1.  Update your provider configuration:
 
     ```elixir
-    config :ueberauth, Ueberauth.Strategy.Pocket
+    config :ueberauth, Ueberauth.Strategy.Pocket,
       consumer_key: System.get_env("POCKET_CONSUMER_KEY")
     ```
 
