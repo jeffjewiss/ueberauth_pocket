@@ -1,8 +1,9 @@
 defmodule UeberauthPocket.Mixfile do
   use Mix.Project
 
-  @version "1.0.0"
+  @version "1.0.1"
 
+  @url "https://github.com/tsubery/ueberauth_pocket"
   def project do
     [app: :ueberauth_pocket,
      version: @version,
@@ -11,8 +12,8 @@ defmodule UeberauthPocket.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     source_url: "https://github.com/tsubery/ueberauth_pocket",
-     homepage_url: "https://github.com/tsubery/ueberauth_pocket",
+     source_url: @url,
+     homepage_url: @url,
      description: description(),
      deps: deps(),
      docs: docs()]
@@ -44,6 +45,9 @@ defmodule UeberauthPocket.Mixfile do
     [files: ["lib", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["Gal Tsubery"],
       licenses: ["Apache 2.0"],
-      links: %{"Pocket": "https://github.com/tsubery/ueberauth_pocket"}]
+      links: %{
+        "GitHub": @url,
+        "Pocket": "https://getpocket.com"
+      }]
   end
 end

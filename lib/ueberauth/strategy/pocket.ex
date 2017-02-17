@@ -57,11 +57,7 @@ defmodule Ueberauth.Strategy.Pocket do
   end
 
   defp consumer_key do
-    env = Application.get_env(:ueberauth, Ueberauth.Strategy.Pocket)
-    env || raise(~s{
-      Missing configuration for Ueberauth pocket strategy!
-      Make sure the :ueberauth_pocket is in mix.exs application list
-    })
+    env = Application.fetch_env!(:ueberauth, Ueberauth.Strategy.Pocket)
     env[:consumer_key] || raise("Missing consumer_key in Ueberauth pocket strategy configuration")
   end
 
