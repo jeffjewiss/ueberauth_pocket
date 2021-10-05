@@ -1,6 +1,6 @@
 defmodule Ueberauth.Strategy.Pocket do
   @moduledoc false
-  use Ueberauth.Strategy, uid_field: :username
+  use Ueberauth.Strategy, uid_field: :username, ignores_csrf_attack: true
 
   alias Ueberauth.Auth.Info
   alias Ueberauth.Auth.Credentials
